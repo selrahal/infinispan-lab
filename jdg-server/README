@@ -1,3 +1,0 @@
-1. Download Red Hat JBoss Data Grid 6.4.0 Server
-2. Unzip jboss-datagrid-6.4.0-server.zip
-3. Naivgate to $JDG_HOME/bin and run ./standalone.sh

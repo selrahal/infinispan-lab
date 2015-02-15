@@ -1,0 +1,3 @@
+1. Download JBoss Infinispan 7.1.0.Final 
+2. Unzip infinispan-server-7.1.0.Final.zip
+3. Naivgate to bin and run ./standalone.sh
