@@ -6,7 +6,7 @@
 
 	<cache-container name="xmlCache" default-cache="xml-configured-cache">
 		<local-cache name="xml-configured-cache">
-			<eviction max-entries="5" strategy="LRU" />
+			<eviction max-entries="5"/>
 		</local-cache>
 	</cache-container>
 
