@@ -1,0 +1,14 @@
+
+
+<infinispan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:infinispan:config:7.1 http://www.infinispan.org/schemas/infinispan-config-7.1.xsd"
+	xmlns="urn:infinispan:config:7.1">
+
+	<cache-container name="xmlCache" default-cache="xml-configured-cache">
+		<local-cache name="xml-configured-cache">
+			<eviction max-entries="5" strategy="LRU" />
+		</local-cache>
+	</cache-container>
+
+</infinispan>
+
