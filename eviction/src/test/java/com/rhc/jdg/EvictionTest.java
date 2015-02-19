@@ -21,7 +21,13 @@ public class EvictionTest {
 		cache.put("key4", "value1");
 		cache.put("key5", "value1");
 		cache.put("key6", "value1");
-		Assert.assertTrue(cache.size() <= 5);
+		Assert.assertTrue("Cache size is over 5", cache.size() <= 5);
+		
+		for (String key : cache.keySet()) {
+			cache.evict(key);
+		}
+		
+		Assert.assertEquals("Cache still contains entries", 0, cache.size());
 	}
 	
 	@Test
@@ -33,7 +39,13 @@ public class EvictionTest {
 		cache.put("key4", "value1");
 		cache.put("key5", "value1");
 		cache.put("key6", "value1");
-		Assert.assertTrue(cache.size() <= 5);
+		Assert.assertTrue("Cache size is over 5", cache.size() <= 5);
+		
+		for (String key : cache.keySet()) {
+			cache.evict(key);
+		}
+		
+		Assert.assertEquals("Cache still contains entries", 0, cache.size());
 	}
 	
 	@Test
@@ -45,6 +57,8 @@ public class EvictionTest {
 		cache.put("key4", "value1");
 		cache.put("key5", "value1");
 		cache.put("key6", "value1");
-		Assert.assertTrue(cache.size() <= 5);
+		Assert.assertTrue("Cache size is over 5", cache.size() <= 5);
+
+		//Remote cache does not expose .evict(Object key) method
 	}
 }
