@@ -1,9 +1,9 @@
 package com.rhc.jdg;
 
-import junit.framework.Assert;
 
 import org.infinispan.Cache;
 import org.infinispan.client.hotrod.RemoteCache;
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.rhc.jdg.provider.JavaCacheProvider;
@@ -26,8 +26,8 @@ public class ExpirationTest {
 		
 		cache.get("key1");
 		
-		Assert.assertTrue(cache.containsKey("key1"));
-		Assert.assertFalse(cache.containsKey("key2"));
+		Assert.assertTrue("Cache does not contain key1", cache.containsKey("key1"));
+		Assert.assertFalse("Cache contains key2", cache.containsKey("key2"));
 		
 	}
 	
@@ -45,8 +45,8 @@ public class ExpirationTest {
 		
 		cache.get("key1");
 		
-		Assert.assertTrue(cache.containsKey("key1"));
-		Assert.assertFalse(cache.containsKey("key2"));
+		Assert.assertTrue("Cache does not contain key1", cache.containsKey("key1"));
+		Assert.assertFalse("Cache contains key2", cache.containsKey("key2"));
 	}
 	
 	@Test
@@ -63,8 +63,8 @@ public class ExpirationTest {
 		
 		cache.get("key1");
 		
-		Assert.assertTrue(cache.containsKey("key1"));
-		Assert.assertFalse(cache.containsKey("key2"));
+		Assert.assertTrue("Cache does not contain key1", cache.containsKey("key1"));
+		Assert.assertFalse("Cache contains key2", cache.containsKey("key2"));
 	}
 	
 	private void safeWait(long time) {
