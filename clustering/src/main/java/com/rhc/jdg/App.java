@@ -3,11 +3,7 @@ package com.rhc.jdg;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.infinispan.client.hotrod.RemoteCache;
-
 import com.rhc.jdg.provider.JavaCacheProvider;
-import com.rhc.jdg.provider.RemoteCacheProvider;
-import com.rhc.jdg.provider.XmlCacheProvider;
 import com.rhc.jdg.util.MapUtil;
 
 public class App {
