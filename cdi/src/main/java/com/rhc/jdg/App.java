@@ -10,11 +10,11 @@ import org.jboss.weld.environment.se.WeldContainer;
 public class App {
 
 	@Inject
-	private Cache injectedCache;
+	private Cache<String, String> injectedCache;
 	
 	@Inject
 	@FarmCache
-	private Cache farmCache;
+	private Cache<String, String> farmCache;
 	
 	
 	public static void main(String[] args) {

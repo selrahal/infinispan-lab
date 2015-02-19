@@ -19,4 +19,6 @@ public class ConfigurationProducer {
 				.enable()
 			.build();
 	}
+	
+	//Note, no configuration for default cache!
 }
