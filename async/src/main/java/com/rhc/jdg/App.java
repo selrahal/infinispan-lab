@@ -7,10 +7,10 @@ import java.util.concurrent.Future;
 
 import org.infinispan.Cache;
 
-import com.rhc.jdg.util.CacheProvider;
+import com.rhc.jdg.provider.JavaCacheProvider;
 
 public class App {
-	private static CacheProvider cacheProvider = new CacheProvider();
+	private static JavaCacheProvider cacheProvider = new JavaCacheProvider();
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		Cache<String, String> cache = cacheProvider.getCache();
