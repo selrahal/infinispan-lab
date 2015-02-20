@@ -1,9 +1,8 @@
 package com.rhc.jdg;
 
-import junit.framework.Assert;
-
 import org.infinispan.Cache;
 import org.infinispan.client.hotrod.RemoteCache;
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.rhc.jdg.provider.JavaCacheProvider;
