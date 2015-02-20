@@ -6,9 +6,7 @@
 
 	<cache-container name="xmlCache" default-cache="xml-configured-cache">
 		<transport/>
-		<replicated-cache name="xml-configured-cache">
-		
-		</replicated-cache>
+		<distributed-cache name="xml-configured-cache" owners="2" />
 	</cache-container>
 
 </infinispan>
