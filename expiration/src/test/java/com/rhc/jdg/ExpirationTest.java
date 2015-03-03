@@ -13,7 +13,7 @@ import com.rhc.jdg.provider.XmlCacheProvider;
 public class ExpirationTest {
 
 	@Test
-	public void testJavaEviction() {
+	public void testJavaExpiration() {
 		Cache<String, String> cache = new JavaCacheProvider().getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
@@ -32,7 +32,7 @@ public class ExpirationTest {
 	}
 	
 	@Test
-	public void testXmlEviction() {
+	public void testXmlExpiration() {
 		Cache<String, String> cache = new XmlCacheProvider().getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
@@ -50,7 +50,7 @@ public class ExpirationTest {
 	}
 	
 	@Test
-	public void testRemoteEviction() {
+	public void testRemoteExpiration() {
 		RemoteCache<String, String> cache = new RemoteCacheProvider().getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
