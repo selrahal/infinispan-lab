@@ -5,6 +5,8 @@ Lab content for Infinispan Tech Talk
 
 Infinispan documentation is available [here](http://infinispan.org/documentation/). The documentation of the latest version is available [here](http://infinispan.org/docs/7.1.x/user_guide/user_guide.html).
 
+To run the applications in Client-Server mode, you'll need to have the Infinispan standalone server installed. Go to the [Infinispan downloads page](http://infinispan.org/download/) and click "Server" to download the server. 
+
 ## 1. Basic configuration ##
 * Project: basic
 * Inspect the project and find the classes which create Caches. Note that there are two types of caches: library (the cache resides in the same jvm as the application) and client-server mode (the cache and the application reside in seperate jvms). There are two ways of configration library mode caches, one is using the Java api and the other is to provide the configuration with an xml file. In client-server mode the configuration is specified in the application servers configuration file (standalone.xml or clustered.xml). The xml configuration for library mode and the xml configuration for client-server mode differ slightly. Be on the lookout for these idiosyncrasies.
