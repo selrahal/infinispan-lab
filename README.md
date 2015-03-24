@@ -11,13 +11,13 @@ To run the applications in Client-Server mode, you'll need to have the Infinispa
 * Project: basic
 * Inspect the project and find the classes which create Caches. Note that there are two types of caches: library (the cache resides in the same jvm as the application) and client-server mode (the cache and the application reside in seperate jvms). There are two ways of configration library mode caches, one is using the Java api and the other is to provide the configuration with an xml file. In client-server mode the configuration is specified in the application servers configuration file (standalone.xml or clustered.xml). The xml configuration for library mode and the xml configuration for client-server mode differ slightly. Be on the lookout for these idiosyncrasies.
 
-## 2. Cache Store ##
-* Project: cache-store
-* In typical usage patterns consisting of caches, the cache is not the source of truth for the data being cached. Infinispan supports this through the use of cache stores. Caches can be configured to leverage a cache store for retrieving, and storing, data. Support in infinispan for different cache store types include: simple file storage, JDBC, JPA, another Infinispan Server, and LevelDB. Infinispan can be configured to write to the cache store synchronously (write-through) or asynchronously (write-behind).
-
-## 3. Eviction ##
+## 2. Eviction ##
 * Project: eviction
 * Caches often are backed by a larger, and typically slower, cache store. Eviction policies determine how many cache entries to keep in memory at any given time. There are several strategies available that will dictate which entries get evicted (and when) to keep the amount of in-memory entries below the maximum.
+
+## 3. Cache Store ##
+* Project: cache-store
+* In typical usage patterns consisting of caches, the cache is not the source of truth for the data being cached. Infinispan supports this through the use of cache stores. Caches can be configured to leverage a cache store for retrieving, and storing, data. Support in infinispan for different cache store types include: simple file storage, JDBC, JPA, another Infinispan Server, and LevelDB. Infinispan can be configured to write to the cache store synchronously (write-through) or asynchronously (write-behind).
 
 ## 4. Expiration ##
 * Project: expiration
