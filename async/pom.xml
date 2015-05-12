@@ -11,7 +11,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <infinispan.version>7.1.0.Final</infinispan.version>
+    <infinispan.version>6.2.1.Final-redhat-2</infinispan.version>
 	<junit.version>4.11</junit.version>
   </properties>
 

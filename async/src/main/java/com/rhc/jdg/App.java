@@ -10,9 +10,8 @@ import org.infinispan.Cache;
 import com.rhc.jdg.provider.JavaCacheProvider;
 
 public class App {
-	private static JavaCacheProvider cacheProvider = new JavaCacheProvider();
-	
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		JavaCacheProvider cacheProvider = new JavaCacheProvider();
 		Cache<String, String> cache = cacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value2");
@@ -35,6 +34,6 @@ public class App {
 			future.get();
 		}
 		System.out.println("ASync " + (System.currentTimeMillis() - startTime));
-		
+		cacheProvider.stop();
 	}
 }
