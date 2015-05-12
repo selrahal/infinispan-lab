@@ -9,6 +9,9 @@ public class MapUtil {
 			toReturn.append(key + ":" + map.get(key));
 			toReturn.append(",");
 		}
+		if (toReturn.length() == 0) {
+			return "";
+		}
 		return toReturn.substring(0, toReturn.length()-1);
 	}
 }
