@@ -7,9 +7,8 @@ public class MapUtil {
 		StringBuilder toReturn = new StringBuilder();
 		for (String key : map.keySet()) {
 			toReturn.append(key + ":" + map.get(key));
-			toReturn.append("\n");
+			toReturn.append(",");
 		}
-		
-		return toReturn.toString();
+		return toReturn.substring(0, toReturn.length()-1);
 	}
 }

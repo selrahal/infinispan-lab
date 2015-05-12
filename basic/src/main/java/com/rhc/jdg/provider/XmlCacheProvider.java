@@ -14,6 +14,7 @@ public class XmlCacheProvider {
 			try {
 				cacheContainer = new DefaultCacheManager("cache-config.xml",
 						true);
+				cacheContainer.start();
 			} catch (IOException e) {
 				e.printStackTrace();
 				return null;
@@ -28,6 +29,12 @@ public class XmlCacheProvider {
 
 	public Cache<String, String> getCache() {
 		return getCacheContainer().getCache();
+	}
+	
+	public void stop() {
+		if (cacheContainer != null) {
+			cacheContainer.stop();
+		}
 	}
 
 }

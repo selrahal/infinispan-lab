@@ -10,6 +10,7 @@ public class JavaCacheProvider {
 	protected CacheContainer getCacheContainer() {
 		if (cacheContainer == null) {
 			cacheContainer = new DefaultCacheManager();
+			cacheContainer.start();
 		}
 		return cacheContainer;
 	}
@@ -20,5 +21,11 @@ public class JavaCacheProvider {
 
 	public Cache<String, String> getCache() {
 		return getCacheContainer().getCache();
+	}
+	
+	public void stop() {
+		if (cacheContainer != null) {
+			cacheContainer.stop();
+		}
 	}
 }
