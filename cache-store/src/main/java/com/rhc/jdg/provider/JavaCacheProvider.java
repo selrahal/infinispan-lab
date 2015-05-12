@@ -28,4 +28,10 @@ public class JavaCacheProvider {
 	public Cache<String, String> getCache() {
 		return getCacheContainer().getCache();
 	}
+	
+	public void stop() {
+		if (cacheContainer != null) {
+			cacheContainer.stop();
+		}
+	}
 }
