@@ -13,28 +13,34 @@ public class ListenersAndInterceptorsTest {
 
 	@Test
 	public void testJavaCache() {
-		Cache<String, String> cache = new JavaCacheProvider().getCache();
+		JavaCacheProvider javaCacheProvider = new JavaCacheProvider();
+		Cache<String, String> cache = javaCacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
 		cache.get("key1");
 		cache.get("key1");
+		javaCacheProvider.stop();
 	}
 	
 	@Test
 	public void testXmlCache() {
-		Cache<String, String> cache = new XmlCacheProvider().getCache();
+		XmlCacheProvider xmlCacheProvider = new XmlCacheProvider();
+		Cache<String, String> cache = xmlCacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
 		cache.get("key1");
 		cache.get("key1");
+		xmlCacheProvider.stop();
 	}
 	
 	@Test
 	public void testRemoteCache() {
-		RemoteCache<String, String> cache = new RemoteCacheProvider().getCache();
+		RemoteCacheProvider remoteCacheProvider = new RemoteCacheProvider();
+		RemoteCache<String, String> cache = remoteCacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
 		cache.get("key1");
 		cache.get("key1");
+		remoteCacheProvider.stop();
 	}
 }

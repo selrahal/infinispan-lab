@@ -46,4 +46,10 @@ public class JavaCacheProvider {
 		AdvancedCache<String, String> advancedCache = cache.getAdvancedCache();
 		advancedCache.addInterceptor(new LoggingCacheInterceptor(), 0);
 	}
+	
+	public void stop() {
+		if (cacheContainer != null) {
+			cacheContainer.stop();
+		}
+	}
 }

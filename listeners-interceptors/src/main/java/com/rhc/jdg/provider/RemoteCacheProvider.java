@@ -33,5 +33,10 @@ public class RemoteCacheProvider{
 		cache.addClientListener(new LoggingCacheClientListener());
 	}
 	
+	public void stop() {
+		if (cacheManager != null) {
+			cacheManager.stop();
+		}
+	}
 
 }
