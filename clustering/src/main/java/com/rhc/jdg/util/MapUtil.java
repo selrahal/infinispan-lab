@@ -1,17 +1,14 @@
 package com.rhc.jdg.util;
 
 import java.util.Map;
-import java.util.Set;
 
 public class MapUtil {
-	public static <K,V> String contents(Map<K,V> map) {
+	public static String contents(Map<String,String> map) {
 		StringBuilder toReturn = new StringBuilder();
-		Set<K> keys = map.keySet();
-		for (K key: keys) {
+		for (String key : map.keySet()) {
 			toReturn.append(key + ":" + map.get(key));
-			toReturn.append("\n");
+			toReturn.append(",");
 		}
-		
-		return toReturn.toString();
+		return toReturn.substring(0, toReturn.length()-1);
 	}
 }

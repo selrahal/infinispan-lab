@@ -19,7 +19,7 @@ public class JavaCacheProvider {
 			GlobalConfiguration globalConfig = new GlobalConfigurationBuilder()
 			  .transport().defaultTransport()
 			     .nodeName("node1")
-			     .clusterName("MyCluster")
+			     .clusterName("myCluster")
 			  .build();
 			
 			
@@ -43,5 +43,11 @@ public class JavaCacheProvider {
 
 	public Cache<String, String> getCache() {
 		return getCacheContainer().getCache();
+	}
+	
+	public void stop() {
+		if (cacheContainer != null) {
+			cacheContainer.stop();
+		}
 	}
 }
