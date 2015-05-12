@@ -14,7 +14,8 @@ public class ExpirationTest {
 
 	@Test
 	public void testJavaExpiration() {
-		Cache<String, String> cache = new JavaCacheProvider().getCache();
+		JavaCacheProvider javaCacheProvider = new JavaCacheProvider();
+		Cache<String, String> cache = javaCacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
 		
@@ -29,11 +30,13 @@ public class ExpirationTest {
 		Assert.assertTrue("Cache does not contain key1", cache.containsKey("key1"));
 		Assert.assertFalse("Cache contains key2", cache.containsKey("key2"));
 		
+		javaCacheProvider.stop();
 	}
 	
 	@Test
 	public void testXmlExpiration() {
-		Cache<String, String> cache = new XmlCacheProvider().getCache();
+		XmlCacheProvider xmlCacheProvider = new XmlCacheProvider();
+		Cache<String, String> cache = xmlCacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
 		
@@ -47,11 +50,14 @@ public class ExpirationTest {
 		
 		Assert.assertTrue("Cache does not contain key1", cache.containsKey("key1"));
 		Assert.assertFalse("Cache contains key2", cache.containsKey("key2"));
+		
+		xmlCacheProvider.stop();
 	}
 	
 	@Test
 	public void testRemoteExpiration() {
-		RemoteCache<String, String> cache = new RemoteCacheProvider().getCache();
+		RemoteCacheProvider remoteCacheProvider = new RemoteCacheProvider();
+		RemoteCache<String, String> cache = remoteCacheProvider.getCache();
 		cache.put("key1", "value1");
 		cache.put("key2", "value1");
 		
@@ -65,6 +71,8 @@ public class ExpirationTest {
 		
 		Assert.assertTrue("Cache does not contain key1", cache.containsKey("key1"));
 		Assert.assertFalse("Cache contains key2", cache.containsKey("key2"));
+		
+		remoteCacheProvider.stop();
 	}
 	
 	private void safeWait(long time) {

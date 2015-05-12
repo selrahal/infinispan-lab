@@ -24,5 +24,11 @@ public class RemoteCacheProvider{
 	public RemoteCache<String, String> getCache() {
 		return getCacheManager().getCache();
 	}
+	
+	public void stop() {
+		if (cacheManager != null) {
+			cacheManager.stop();
+		}
+	}
 
 }
