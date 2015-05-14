@@ -1,11 +1,11 @@
-Infinispan Tech Talk 
+Red Hat JBoss Data Grid Tech Talk 
 =====================
 
-Lab content for Infinispan Tech Talk
+Lab content for Red Hat JBoss Data Grid Tech Talk
 
-Infinispan documentation is available [here](http://infinispan.org/documentation/). The documentation of the latest version is available [here](http://infinispan.org/docs/7.1.x/user_guide/user_guide.html).
+The Maven repository containing all dependencies you will need for these projects is located in the m2repo/ folder.
 
-To run the applications in Client-Server mode, you'll need to have the Infinispan standalone server installed. Go to the [Infinispan downloads page](http://infinispan.org/download/) and click "Server" to download the server. 
+The latest version of Red Hat JBoss Data Grid is included in the server/ folder.
 
 ## 1. Basic configuration ##
 * Project: basic
@@ -17,7 +17,7 @@ To run the applications in Client-Server mode, you'll need to have the Infinispa
 
 ## 3. Cache Store ##
 * Project: cache-store
-* In typical usage patterns consisting of caches, the cache is not the source of truth for the data being cached. Infinispan supports this through the use of cache stores. Caches can be configured to leverage a cache store for retrieving, and storing, data. Support in infinispan for different cache store types include: simple file storage, JDBC, JPA, another Infinispan Server, and LevelDB. Infinispan can be configured to write to the cache store synchronously (write-through) or asynchronously (write-behind).
+* In typical usage patterns consisting of caches, the cache is not the source of truth for the data being cached. Red Hat JBoss Data Grid supports this through the use of cache stores. Caches can be configured to leverage a cache store for retrieving, and storing, data. Support in infinispan for different cache store types include: simple file storage, JDBC, JPA, another Red Hat JBoss Data Grid Server, and LevelDB. Red Hat JBoss Data Grid can be configured to write to the cache store synchronously (write-through) or asynchronously (write-behind).
 
 ## 4. Expiration ##
 * Project: expiration
@@ -33,7 +33,7 @@ To run the applications in Client-Server mode, you'll need to have the Infinispa
 
 ## 7. CDI ##
 * Project: cdi
-* Infinispan comes with a library that makes retrieving caches via CDI very simple. With a few annotations you can designate cache configurations that should be used. Then, just through injecting caches, you will have access to all the functionality needed.
+* Red Hat JBoss Data Grid comes with a library that makes retrieving caches via CDI very simple. With a few annotations you can designate cache configurations that should be used. Then, just through injecting caches, you will have access to all the functionality needed.
 
 ## 8. Asynchronous API ##
 * Project: async
